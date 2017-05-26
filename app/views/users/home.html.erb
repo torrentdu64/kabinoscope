@@ -1,8 +1,8 @@
-<h1>Trombinoscope</h1>
-<p>trouve ta trombine...</p>
-<div class="contener">
+<h1 class="text-center">Trombinoscope</h1>
+<p class="text-center">trouve ta trombine...</p>
+<div class="container">
   <div class="row">
-      <div class="col-sm-8">
+      <div class="col-sm-6">
         <% @users.each do |u| %>
           <%= render 'shared/card', u: u %>
         <% end %>
@@ -10,7 +10,7 @@
     </div>
 
     <div class="row">
-      <div class="col-sm-8">
+      <div class="col-sm-6">
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://unsplash.it/200/300/?gravity=east');">
           <div class="card-category "><h2>Inscrit toi !!</h2></div>
            <div class="card-description">
