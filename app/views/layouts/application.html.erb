@@ -9,9 +9,16 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
   </head>
   <body>
-    <%= render 'shared/navbar' %>
+    <% render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <%= yield %>
+    <div class="contener">
+      <div class="row">
+        <div class="col-sm-offset-3 col-sm-6">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+
     <%= javascript_include_tag 'application' %>
   </body>
 </html>
