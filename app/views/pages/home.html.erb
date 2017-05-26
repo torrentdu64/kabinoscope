@@ -1,7 +1,9 @@
 <div class="container">
   <div class="row">
+   <% @users.each do |u| %>
     <div class="col-xs-12 col-sm-4">
-      <!-- insert <div class="card"> -->
+      <%= u.first_name %>
     </div>
+    <% end %>
   </div>
 </div>
