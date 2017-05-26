@@ -2,7 +2,15 @@
   <div class="row">
    <% @users.each do |u| %>
     <div class="col-xs-12 col-sm-4">
-      <%= u.first_name %>
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= u.avatar_url %>');">
+        <div class="card-category"><%= u.first_name  %> <%= u.last_name %></div>
+        <div class="card-description">
+          <h2><%= u.desciption %></h2>
+          <p><%= u.competence %></p>
+        </div>
+        <img class="card-user avatar" src="<%= u.avatar_url %>">
+        <a class="card-link" href="" ></a>
+      </div>
     </div>
     <% end %>
   </div>
