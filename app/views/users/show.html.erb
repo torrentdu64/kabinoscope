@@ -20,10 +20,11 @@
          .to(name, 1,{alpha: 1})
          .to(text, 1.2, {alpha: 1})
          .to(card, 1, {height:400})
-         .to(text, 1,  {x:150,y:-200})
+         .to(text, 1,  {y:-200})
          .to(image, 1, {autoAlpha: 1,  ease: Expo.easeOut, rotation: 360})
-         .to(image , 1, {x:10,y:290,borderRadius: 0,marginLeft: 3  });
-
+         .to(image , 1, {x:10,y:290,borderRadius: 0,marginLeft: 3  })
+         .to(image , 1, {x:-444 })
+         .to(image , 1, {x:-550, y:50 });
          //.pause();
 
        card.mouseover(function(e){

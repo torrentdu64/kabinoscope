@@ -3,10 +3,11 @@ class UsersController < ApplicationController
   before_action :find_id_user, only: [ :show ]
   def home
      @users = User.all
+     @background_link = "home"
   end
 
   def show
-
+    @background_link = "show"
   end
 
   private

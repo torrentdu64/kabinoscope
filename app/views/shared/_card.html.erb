@@ -1,10 +1,14 @@
-<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://unsplash.it/200/300/?gravity=east');">
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://lorempixel.com/600/500/nature/');">
     <div class="card-category"><h2><%= u.first_name%> <%= u.last_name %></h2></div>
     <div class="card-description">
       <h2><%= u.desciption  %></h2>
       <p><%=  u.competence %></p>
     </div>
     <img class="card-user avatar" src="<%= u.avatar_url%>">
-    <a class="card-link" href="#" ></a>
-    <%= link_to "", user_path(u), {class: "card-link"} %>
+    <% if @background_link == "home" %>
+      <%= link_to "", user_path(u) , {class: "card-link"} %>
+    <% end %>
+    <%  if @background_link == "show"%>
+      <%= link_to "", root_path , {class: "card-link"} %>
+    <% end %>
 </div>
