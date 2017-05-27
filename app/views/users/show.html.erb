@@ -13,15 +13,29 @@
        var card = $('.card');
        var name = $('.card-category').css({ opacity: 0 });
        var text = $('.card-description').css({opacity: 0});
+       var image = $('.avatar').css({opacity: 0});
 
+       var t1 = new TimelineLite();
+         t1
+         .to(name, 1,{alpha: 1})
+         .to(text, 1.2, {alpha: 1})
+         .to(card, 1, {height:400})
+         .to(text, 1,  {x:150,y:-200})
+         .to(image, 1, {autoAlpha: 1,  ease: Expo.easeOut, rotation: 360})
+         .to(image , 1, {x:10,y:290,borderRadius: 0,marginLeft: 3  });
+
+         //.pause();
 
        card.mouseover(function(e){
-         var t1 = new TimelineLite();
-         t1.to(card, 1, {height:400});
-         t1.to(name, 1,{alpha: 1});
-         t1.to(text, 1.2, {alpha: 1});
-         t1.to(text, 1,  {x:150,y:-200});
+         t1.timeScale(1)
+           .play();
        });
+
+       card.mouseout(function(e){
+         t1.timeScale(3)
+           .reverse();
+       });
+
     })(jQuery);
 
   <% end %>
