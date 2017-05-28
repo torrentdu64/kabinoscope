@@ -22,6 +22,7 @@
     </div>
 
     <%= javascript_include_tag 'application' %>
+    <%=yield(:after_ajax_js) %>
     <%= yield(:after_tween_js) %>
   </body>
 </html>

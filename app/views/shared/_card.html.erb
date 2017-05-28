@@ -6,9 +6,12 @@
     </div>
     <img class="card-user avatar" src="<%= u.avatar_url%>">
     <% if @background_link == "home" %>
-      <%= link_to "", user_path(u) , {class: "card-link"} %>
+      <%= link_to  user_path(u), remote: :true  %>
     <% end %>
     <%  if @background_link == "show" %>
-      <%= link_to "", root_path , {class: "card-link"} %>
+      <%= link_to root_path ,remote: :true %>
     <% end %>
 </div>
+<script type="text/javascript">
+  $('a').addClass("card-link");
+</script>

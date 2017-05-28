@@ -1,10 +1,15 @@
-
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
 <h1 class="text-center">Trombinoscope</h1>
 <p class="text-center">trouve ta trombine...</p>
 <div class="container">
+
   <div class="row">
       <div class="col-sm-6">
         <% @users.each do |u| %>
+
           <%= render 'shared/card', u: u %>
         <% end %>
       </div>
@@ -26,12 +31,29 @@
     </div>
 </div>
 
-<script type="text/javascript">
-  $(document).ready(function(){
-
-   $('.card-description').css("display", "none");
-
-  });
+<% content_for(:after_ajax_js) do %>
+  <%= javascript_tag do %>
+    $(document).ready(function(){
 
 
-</script>
+       $('.card-description').css("display", "none");
+      $('.card-description a').addClass("card-link");
+      var url = "https://localhost:3000/users/" + <%= "#{@users.ids}" %>;
+
+
+          $.ajax({
+            type: "GET",
+            url: url,
+            success: function(data) {
+            $(document).preventDefault()
+              $(document).hide()
+              $(document).append("coucou");
+            },
+            error: function(jqXHR) {
+              console.error(jqXHR.responseText);
+            }
+          });
+
+        });
+    <% end %>
+<% end %>
