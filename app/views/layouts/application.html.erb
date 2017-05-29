@@ -15,14 +15,14 @@
     <%= render 'shared/flashes' %>
     <div class="container">
       <div class="row">
-        <div class="col-sm-offset-3 col-sm-6">
+        <div class="col-sm-offset-3 col-sm-6 ajax">
           <%= yield %>
         </div>
       </div>
     </div>
 
     <%= javascript_include_tag 'application' %>
-    <%=yield(:after_ajax_js) %>
+
     <%= yield(:after_tween_js) %>
   </body>
 </html>

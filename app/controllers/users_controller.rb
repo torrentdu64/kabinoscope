@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
        respond_to do |format|
            format.html {} #redirect_to restaurant_path(@restaurant) }
-           format.js {} # <-- will render `app/views/reviews/create.js.erb`
+           format.js {  } # <-- will render `app/views/reviews/create.js.erb`
        end
   end
 
@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     @background_link = "show"
      respond_to do |format|
          format.html {} #redirect_to restaurant_path(@restaurant) }
-         format.js  # <-- will render `app/views/reviews/create.js.erb`
+         format.js  { }# <-- will render `app/views/reviews/create.js.erb`
        end
   end
 

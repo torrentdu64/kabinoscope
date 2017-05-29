@@ -1,4 +1,26 @@
-$(document).ready(function(){
-    alert( "Load was performed." );
-});
+
+    alert( "home view" );
+    event.preventDefault();
+    $('.ajax').fadeOut();
+    $.ajax({
+        type: 'GET',
+        url: "users/"+3
+    }).done(function(response){
+       console.log('hello?', response);
+       $('.container').html(response);
+
+    });
+    $('.container').hide(response);fadeIn();
+
+
+
+
+
+
+
+
+
+
+
+
 
